@@ -1,0 +1,23 @@
+{
+    "name": "suisdk-javascript",
+    "private": true,
+    "workspaces": [
+      "packages/*"
+    ],
+    "scripts": {
+      "client": "pnpm --filter suisdk-client dev",
+      "dev": "pnpm -r run dev",
+      "build": "pnpm -r run build",
+      "test": "pnpm -r run test",
+      "lint": "pnpm -r run lint",
+      "clean": "pnpm -r run clean"
+    },
+    "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "^5.62.0",
+      "@typescript-eslint/parser": "^5.62.0",
+      "eslint": "^8.57.0",
+      "eslint-config-prettier": "^9.1.0",
+      "prettier": "^3.2.5",
+      "typescript": "^5.4.2"
+    }
+  }
