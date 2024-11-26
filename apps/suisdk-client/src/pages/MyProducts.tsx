@@ -61,13 +61,13 @@ export const MyProducts: React.FC = () => {
                                     key={product.id}
                                     product={product}
                                     onSell={
-                                        product.listings.length > 0
-                                            ? () => unlistProduct(product.listings[0].id)
+                                        product.listings.length === 0
+                                            ? () => listProduct(product.id)
                                             : undefined
                                     }
                                     onList={
-                                        product.listings.length === 0
-                                            ? () => listProduct(product.id)
+                                        product.listings.length > 0
+                                            ? () =>  unlistProduct(product.listings[0].id)
                                             : undefined
                                     }
                                     showActions={true}
