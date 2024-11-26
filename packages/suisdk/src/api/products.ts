@@ -18,12 +18,8 @@ export class ProductsAPI {
         }
     }
 
-    async getProductsByOwner(ownerId: string): Promise<Product[]> {
-        return this.client.get<Product[]>(`/products/owner/${ownerId}`);
-    }
-
-    async getOwned(collectionId: string): Promise<Product[]> {
-        const nftResponse = await this.client.get<ProductsResponse>(`/v1/user/product/owned?cid=${collectionId}`);
+    async getOwned(): Promise<Product[]> {
+        const nftResponse = await this.client.get<ProductsResponse>(`/v1/user/product/owned`);
         console.log('nftResponse', nftResponse)
         return nftResponse.data;
     }

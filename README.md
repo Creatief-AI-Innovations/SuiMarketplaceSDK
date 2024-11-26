@@ -55,8 +55,7 @@ console.log(products);
 2. Get Products Owned
 
 ```
-const collectionId = 'your-collection-id';
-const ownedProducts = await marketplaceApi.products.getOwned(collectionId);
+const ownedProducts = await marketplaceApi.products.getOwned();
 console.log(ownedProducts);
 ```
 Transactions
@@ -97,7 +96,7 @@ import { LoginCredentials, AuthResponse } from '@interverse/suisdk';
 
 Product Types
 ```
-import { Product, Nft, ProductsResponse, NftResponse, TransactionResult } from '@interverse/suisdk';
+import { Product, ProductsResponse, TransactionResult } from '@interverse/suisdk';
 ```
 
 Example

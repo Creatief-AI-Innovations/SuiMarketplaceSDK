@@ -3,6 +3,8 @@ import {toast} from 'react-toastify';
 import {Product} from '@interverse/suisdk';
 import {marketplaceApi} from '../api/marketplaceApi';
 
+const collectionId = import.meta.env.VITE_COLLECTION_ID as string;
+
 export const useProducts = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [myProducts, setMyProducts] = useState<Product[]>([]);
@@ -14,7 +16,7 @@ export const useProducts = () => {
         setLoading(true);
         setError(null);
         try {
-            const data = await marketplaceApi.products.getAllProducts("83dfd29a-5e2b-4494-b98a-9c24bd2ae147");
+            const data = await marketplaceApi.products.getAllProducts(collectionId);
             console.log('Products:', data);
             setProducts(data);
         } catch (err) {
@@ -29,7 +31,7 @@ export const useProducts = () => {
         setLoading(true);
         setError(null);
         try {
-            const data = await marketplaceApi.products.getOwned("de36d429-35aa-412f-9762-ceea83ae320a");
+            const data = await marketplaceApi.products.getOwned();
             setMyProducts(data);
         } catch (err) {
             setError('Failed to load your products');
