@@ -72,7 +72,9 @@ export const useProducts = () => {
             console.log('Selling product', productId);
             const response = await marketplaceApi.transactions.unlistProduct(productId);
             if (response.success) {
-                loadMyProducts();
+                setTimeout(() => {
+                    loadMyProducts();
+                }, 1200);
                 // setMyProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
                 toast.success('Product unlisted successfully from marketplace');
             } else {
@@ -102,7 +104,9 @@ export const useProducts = () => {
             console.log('Listing product', productId);
             const response = await marketplaceApi.transactions.listProduct(productId,2000000000);
             if (response.success) {
-                loadMyProducts();
+                setTimeout(() => {
+                    loadMyProducts();
+                }, 1200);
                 // setMyProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
                 toast.success('Product listed successfully');
             } else {

@@ -71,7 +71,7 @@ export const MyProducts: React.FC = () => {
                                             : undefined
                                     }
                                     showActions={true}
-                                    isSelling={product.listings[0]?.id ? loadingProductIds.has(product.listings[0].id) : false}
+                                    isSelling={product.listings[0]?.id ? loadingProductIds.has(product.listings[0].id) : loadingProductIds.has(product.id)}
                                 />
                             ))}
                     </div>

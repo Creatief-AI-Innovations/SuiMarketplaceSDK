@@ -47,7 +47,8 @@ export const NftCard: React.FC<NftCardProps> = ({
                 onClick={onList}
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-md text-sm font-medium"
               >
-                UnList
+                
+                {isSelling ? 'UnListing...' : 'UnList'}
               </button>
             )}
           </div>
