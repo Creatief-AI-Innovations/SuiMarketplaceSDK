@@ -13,6 +13,6 @@ export class TransactionsAPI {
   }
 
   async listProduct(productId: string, price: number): Promise<TransactionResult> {
-    return this.client.post<TransactionResult>('/v1/market/product/sell', { pid: productId, price });
+    return this.client.post<TransactionResult>('/v1/market/product/list_for_sale', { pid: productId, price });
   }
 }
